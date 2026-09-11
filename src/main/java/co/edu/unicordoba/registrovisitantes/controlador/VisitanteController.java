@@ -29,7 +29,13 @@ public class VisitanteController {
     public VisitanteController(VisitanteService servicio) {
         this.servicio = servicio;
     }
-
+    @GetMapping("/")
+public Map<String, String> inicio() {
+    return Map.of(
+        "mensaje", "API Registro de Visitantes funcionando",
+        "estado", "OK"
+    );
+}
     @PostMapping
     public Visitante registrar(@RequestParam String nombre,
                                @RequestParam int edad) {
